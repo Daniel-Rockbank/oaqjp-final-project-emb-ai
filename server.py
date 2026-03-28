@@ -9,7 +9,7 @@ def index():
 
 @app.route("/emotionDetector", methods=["GET"])
 def emotion_detector_route():
-    text_to_analyze = request.args.get["textToAnalyze"]
+    text_to_analyze = request.args.get("textToAnalyze")
     result = emotion_detector(text_to_analyze)
 
     formatted_output = (
