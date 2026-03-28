@@ -9,10 +9,9 @@ def index():
 
 @app.route("/emotionDetector", methods=["GET"])
 def emotion_detector_route():
-    text_to_analyze = request.form["textToAnalyze"]
+    text_to_analyze = request.args.get["textToAnalyze"]
     result = emotion_detector(text_to_analyze)
 
-    # Format the output exactly as required
     formatted_output = (
         f"For the given statement, the system response is "
         f"'anger': {result['anger']}, "
